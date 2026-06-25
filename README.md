@@ -48,7 +48,7 @@ Proyek ini dibangun menggunakan standar pengembangan Android modern:
 *   **Arsitektur**: MVVM (Model-View-ViewModel)
 *   **UI Framework**: Android ViewBinding & XML Layouts
 *   **Storage (Local DB)**: [Room Persistence](https://developer.android.com/training/data-storage/room)
-*   **Networking**: [Retrofit 2](https://square.github.io/retrofit/) & OkHttp 3
+*   **Networking**: [Retrofit 2](https://square.github.io/retrofit/) & OkHttp 4
 *   **Movie Database**: [TMDB API](https://www.themoviedb.org/documentation/api)
 *   **AI Engine**: [Google Generative AI SDK](https://ai.google.dev/) (Gemini API)
 *   **Image Loading**: [Glide](https://github.com/bumptech/glide)
