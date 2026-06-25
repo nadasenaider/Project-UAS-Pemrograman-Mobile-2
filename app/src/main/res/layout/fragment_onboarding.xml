@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_onboarding">
+
+    <!-- Scrim Gelap agar teks mudah dibaca (Overlay) -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#A6000000" />
+
+    <!-- Top Logo & App Title -->
+    <LinearLayout
+        android:id="@+id/logo_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_splash_logo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-black"
+            android:text="CineLog"
+            android:textColor="@color/primary_gold"
+            android:textSize="26sp"
+            android:letterSpacing="0.05" />
+
+    </LinearLayout>
+
+    <!-- Center Content (ViewPager for Swiping) -->
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpOnboarding"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/logo_layout"
+        app:layout_constraintBottom_toTopOf="@id/btn_get_started" />
+
+    <!-- Navigation Buttons Container -->
+    <FrameLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toTopOf="@id/tv_login_link"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <!-- Next Button (Visible on Page 1 & 2) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:backgroundTint="@color/divider_color"
+            android:fontFamily="sans-serif-medium"
+            android:text="Next  →"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:cornerRadius="16dp"
+            app:strokeColor="@color/primary_gold"
+            app:strokeWidth="1dp" />
+
+        <!-- Get Started Button (Visible only on Page 3) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_get_started"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:backgroundTint="@color/primary_gold"
+            android:fontFamily="sans-serif-medium"
+            android:text="Get Started  →"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:cornerRadius="16dp" />
+    </FrameLayout>
+
+    <!-- Link -->
+    <TextView
+        android:id="@+id/tv_login_link"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:fontFamily="sans-serif"
+        android:padding="8dp"
+        android:text="Already have an account? Log In"
+        android:textColor="@color/text_secondary"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@id/dots_container"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Dots -->
+    <LinearLayout
+        android:id="@+id/dots_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/tv_footer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/dot1"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/dot_active" />
+
+        <ImageView
+            android:id="@+id/dot2"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/dot_inactive" />
+
+        <ImageView
+            android:id="@+id/dot3"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:src="@drawable/dot_inactive" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_footer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp"
+        android:alpha="0.6"
+        android:text="CURATED FOR ENTHUSIASTS"
+        android:textColor="@color/text_tertiary"
+        android:textSize="10sp"
+        android:letterSpacing="0.1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

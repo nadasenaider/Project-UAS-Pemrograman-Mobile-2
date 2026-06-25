@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "702536643603",
+    "project_id": "cinelog-89d80",
+    "storage_bucket": "cinelog-89d80.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702536643603:android:457df1a024ad3ef541fbe6",
+        "android_client_info": {
+          "package_name": "com.example.cinelog"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702536643603-ehi1dplgqe9nsqb7mml3vfsdr3d7i0d5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.cinelog",
+            "certificate_hash": "ac56a50607574cfea0d1c45799fa6c293934e652"
+          }
+        },
+        {
+          "client_id": "702536643603-8098nurnv8ffehcvana8h7e91frh2noa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNspnWAopRGZiLfb36vSANiqabRsyYwDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702536643603-8098nurnv8ffehcvana8h7e91frh2noa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

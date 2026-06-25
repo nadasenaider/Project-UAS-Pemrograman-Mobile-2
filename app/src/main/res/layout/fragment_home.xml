@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_dark">
+
+    <!-- Frozen Top Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/headerContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_dark"
+        android:paddingVertical="16dp"
+        android:elevation="4dp"
+        android:translationZ="10dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="CineLog"
+            android:textColor="@color/text_gold"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/btnSearch"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/dot_inactive"
+            android:backgroundTint="@color/bg_card"
+            android:contentDescription="Search Movie"
+            android:padding="10dp"
+            android:src="@android:drawable/ic_menu_search"
+            app:layout_constraintBottom_toBottomOf="@id/tvHomeTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvHomeTitle"
+            app:tint="@color/text_primary" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Scrollable Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@drawable/scrollbar_thumb_gray"
+        android:scrollbarSize="4dp"
+        android:fadeScrollbars="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/headerContainer">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="100dp">
+
+            <!-- Feature Banner (Trending Carousel) -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpBanner"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:layout_marginTop="8dp"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <me.relex.circleindicator.CircleIndicator3
+                android:id="@+id/indicatorHome"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vpBanner" />
+
+            <!-- Category Chip Group -->
+            <HorizontalScrollView
+                android:id="@+id/svChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@id/indicatorHome">
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/cgHome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingStart="30dp"
+                    android:paddingEnd="30dp"
+                    app:singleLine="true"
+                    app:singleSelection="true">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAll"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="All Genres"
+                        android:textColor="@color/chip_text_selector"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        app:chipStrokeColor="@color/chip_stroke_selector"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipDrama"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Drama"
+                        android:textColor="@color/chip_text_selector"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        app:chipStrokeColor="@color/chip_stroke_selector"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipAction"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Action"
+                        android:textColor="@color/chip_text_selector"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        app:chipStrokeColor="@color/chip_stroke_selector"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipSciFi"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sci-Fi"
+                        android:textColor="@color/chip_text_selector"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        app:chipStrokeColor="@color/chip_stroke_selector"
+                        app:chipStrokeWidth="1dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/chipHorror"
+                        style="@style/Widget.MaterialComponents.Chip.Choice"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Horror"
+                        android:textColor="@color/chip_text_selector"
+                        app:chipBackgroundColor="@color/chip_background_selector"
+                        app:chipStrokeColor="@color/chip_stroke_selector"
+                        app:chipStrokeWidth="1dp" />
+                </com.google.android.material.chip.ChipGroup>
+            </HorizontalScrollView>
+
+            <!-- Popular Section -->
+            <TextView
+                android:id="@+id/tvPopularHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:text="Popular Movies"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/svChips" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPopular"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvPopularHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Trending Section -->
+            <TextView
+                android:id="@+id/tvTrendingHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Trending Today"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvPopular" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTrending"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTrendingHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Indonesian Movies Section -->
+            <TextView
+                android:id="@+id/tvIndonesianHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Indonesian Pride"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTrending" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIndonesian"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvIndonesianHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Anime Section -->
+            <TextView
+                android:id="@+id/tvAnimeHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Popular Anime"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvIndonesian" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvAnime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvAnimeHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Top Rated Section -->
+            <TextView
+                android:id="@+id/tvTopRatedHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Top Rated"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvAnime" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvTopRated"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvTopRatedHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Korean Drama Section -->
+            <TextView
+                android:id="@+id/tvKDramaHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="K-Drama"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvTopRated" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvKDrama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvKDramaHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Indonesian Series Section -->
+            <TextView
+                android:id="@+id/tvIndoSeriesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Series Indonesia"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvKDrama" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvIndoSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvIndoSeriesHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Western Series Section -->
+            <TextView
+                android:id="@+id/tvWestSeriesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Western Series"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvIndoSeries" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvWestSeries"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvWestSeriesHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+            <!-- Now Playing Section -->
+            <TextView
+                android:id="@+id/tvNowPlayingHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="32dp"
+                android:text="Now Playing"
+                android:textColor="@color/text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rvWestSeries" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvNowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                app:layout_constraintTop_toBottomOf="@id/tvNowPlayingHeader"
+                tools:listitem="@layout/item_movie_horizontal" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Search / Loading Overlay Sim -->
+    <ProgressBar
+        android:id="@+id/pbHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

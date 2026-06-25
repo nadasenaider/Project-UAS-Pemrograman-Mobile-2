@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+  
+  <!-- Lingkaran luar emas -->
+  <path
+      android:strokeColor="#E0A938"
+      android:strokeWidth="4"
+      android:strokeLineCap="round"
+      android:pathData="M 60,15 A 45,45 0 1,1 59.9,15" />
+  
+  <!-- Clapperboard di tengah -->
+  <path
+      android:fillColor="#E0A938"
+      android:pathData="M74,45 l2.5,5 h-4 l-2.5,-5 h-2.5 l2.5,5 h-4 l-2.5,-5 H61.5 l2.5,5 H60 L57.5,45 H55 c-1.7,0 -3,1.3 -3,3 v22 c0,1.7 1.3,3 3,3 h20 c1.7,0 3,-1.3 3,-3 V45 H74 z"/>
+  
+  <!-- Bintang-bintang berkilau -->
+  <path
+      android:fillColor="#FFC107"
+      android:pathData="M70,55 l0.6,1.4 l1.4,0.6 l-1.4,0.6 l-0.6,1.4 l-0.6,-1.4 l-1.4,-0.6 l1.4,-0.6 z M58,63 l0.4,1 l1,0.4 l-1,0.4 l-0.4,1 l-0.4,-1 l-1,-0.4 l1,-0.4 z"/>
+</vector>

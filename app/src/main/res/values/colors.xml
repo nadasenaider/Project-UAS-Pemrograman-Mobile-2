@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Premium Dark & Gold Theme Colors -->
+    <color name="bg_dark">#121212</color>
+    <color name="bg_card">#1E1E1E</color>
+    <color name="primary_gold">#E0A938</color>
+    <color name="primary_gold_dark">#B78423</color>
+    <color name="primary_gold_transparent">#33E0A938</color>
+    <color name="text_gold">#FFC107</color>
+    
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#A0A0A0</color>
+    <color name="text_tertiary">#6E6E6E</color>
+    
+    <!-- Status / Accent Colors -->
+    <color name="green_meta">#00E676</color>
+    <color name="bg_meta">#122D1C</color>
+    <color name="bg_rating">#2A2315</color>
+    <color name="divider_color">#2C2C2C</color>
+
+    <!-- Aliases for UI components -->
+    <color name="bg_primary">#121212</color>
+    <color name="bg_secondary">#1E1E1E</color>
+    <color name="accent_color">#E0A938</color>
+</resources>

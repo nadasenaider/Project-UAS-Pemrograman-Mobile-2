@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/ic_home"
+        android:title="Home" />
+    <item
+        android:id="@+id/collectionFragment"
+        android:icon="@drawable/ic_collection"
+        android:title="Koleksi" />
+    <item
+        android:id="@+id/aiChatFragment"
+        android:icon="@drawable/ic_ai"
+        android:title="AI Chat" />
+    <item
+        android:id="@+id/statsFragment"
+        android:icon="@drawable/ic_stats"
+        android:title="Statistik" />
+    <item
+        android:id="@+id/profileFragment"
+        android:icon="@drawable/ic_profile"
+        android:title="Profil" />
+</menu>

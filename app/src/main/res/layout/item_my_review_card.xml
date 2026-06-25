@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="260dp"
+    android:layout_height="115dp"
+    android:layout_marginEnd="14dp"
+    android:layout_marginVertical="4dp"
+    app:cardCornerRadius="14dp"
+    app:cardElevation="3dp"
+    app:cardBackgroundColor="@color/bg_card">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <!-- Movie Poster -->
+        <ImageView
+            android:id="@+id/ivReviewPoster"
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bg_onboarding"
+            tools:ignore="ContentDescription" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp"
+            android:gravity="center_vertical">
+
+            <!-- Movie Title -->
+            <TextView
+                android:id="@+id/tvReviewMovieTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/text_primary"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="Oppenheimer" />
+
+            <!-- Rating Indicator -->
+            <RatingBar
+                android:id="@+id/rbMyReview"
+                style="?android:attr/ratingBarStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:numStars="5"
+                android:stepSize="0.1"
+                android:isIndicator="true"
+                android:progressTint="@color/text_gold"
+                tools:rating="4.5" />
+
+            <!-- Notes Snippet -->
+            <TextView
+                android:id="@+id/tvReviewSnippet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:textColor="@color/text_secondary"
+                android:textSize="11sp"
+                android:lineSpacingExtra="2dp"
+                tools:text="This movie is an absolute masterpiece. Cillian Murphy's performance is legendary." />
+
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

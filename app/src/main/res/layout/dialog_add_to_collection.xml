@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_card"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Handle line at the top -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:background="@color/divider_color" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manage Collection"
+        android:textColor="@color/text_primary"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvDialogMovieTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/text_gold"
+        android:textSize="14sp"
+        tools:text="Oppenheimer" />
+
+    <!-- RadioGroup for Status Selection -->
+    <RadioGroup
+        android:id="@+id/rgStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/rbWatchlist"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Watchlist (Mau Nonton)"
+            android:textColor="@color/text_primary"
+            android:buttonTint="@color/primary_gold" />
+
+        <RadioButton
+            android:id="@+id/rbWatching"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Watching (Sedang Nonton)"
+            android:textColor="@color/text_primary"
+            android:buttonTint="@color/primary_gold" />
+
+        <RadioButton
+            android:id="@+id/rbWatched"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:text="Watched (Sudah Ditonton)"
+            android:textColor="@color/text_primary"
+            android:buttonTint="@color/primary_gold" />
+    </RadioGroup>
+
+    <!-- Watched-specific Section (Rating & Notes) -->
+    <LinearLayout
+        android:id="@+id/llWatchedReview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider_color"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rating"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <RatingBar
+            android:id="@+id/dialogRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:rating="0" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:hintEnabled="false"
+            app:boxBackgroundColor="@color/bg_dark"
+            app:boxStrokeColor="@color/primary_gold"
+            app:boxStrokeWidthFocused="1.5dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:endIconMode="custom"
+            app:endIconDrawable="@drawable/ic_mic"
+            app:endIconTint="@color/primary_gold">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etDialogNotes"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:gravity="top|start"
+                android:hint="write your thoughts about the movie..."
+                android:textColorHint="@color/text_tertiary"
+                android:textColor="@color/text_primary"
+                android:inputType="textMultiLine"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAiOptimize"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="✨ Optimasi AI"
+            android:textColor="@color/primary_gold"
+            android:textSize="12sp"
+            app:icon="@drawable/ic_ai"
+            app:iconTint="@color/primary_gold"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <ProgressBar
+            android:id="@+id/pbAiLoading"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <!-- Bottom Buttons -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDialogRemove"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="REMOVE"
+            android:textColor="@color/text_secondary"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDialogSave"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_marginStart="12dp"
+            android:text="SAVE"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:backgroundTint="@color/primary_gold"
+            app:cornerRadius="8dp" />
+    </LinearLayout>
+
+</LinearLayout>

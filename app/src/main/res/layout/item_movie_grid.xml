@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp">
+
+    <!-- Poster Card -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvGridPoster"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivGridPoster"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:contentDescription="Movie Poster"
+                tools:src="@drawable/bg_onboarding" />
+
+            <!-- Rating badge overlay -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:background="@drawable/dot_active"
+                android:backgroundTint="#CC121212"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="★"
+                    android:textColor="@color/text_gold"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/tvGridRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="2dp"
+                    android:textColor="@color/text_primary"
+                    android:textSize="8sp"
+                    android:textStyle="bold"
+                    tools:text="8.2" />
+            </LinearLayout>
+
+            <!-- Season/Episode Badge (Bottom Right Overlay) -->
+            <TextView
+                android:id="@+id/tvGridSeasonEntry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:background="@drawable/dot_active"
+                android:backgroundTint="#CCFFD700"
+                android:paddingHorizontal="4dp"
+                android:paddingVertical="2dp"
+                android:textColor="@color/black"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                android:visibility="gone"
+                tools:text="S1 • E12"
+                tools:visibility="visible" />
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Movie Title -->
+    <TextView
+        android:id="@+id/tvGridTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/text_primary"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cvGridPoster"
+        tools:text="Oppenheimer" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
