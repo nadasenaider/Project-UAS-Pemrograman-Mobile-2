@@ -50,7 +50,7 @@ Proyek ini dibangun menggunakan standar pengembangan Android modern:
 *   **Movie Database**: [TMDB API](https://www.themoviedb.org/documentation/api)
 *   **AI Engine**: [Google Generative AI SDK](https://ai.google.dev/) (Gemini API)
 *   **Image Loading**: [Glide](https://github.com/bumptech/glide)
-*   **Firebase**: Analytics & Crashlytics
+*   **Firebase**: Analytics
 
 ---
 
