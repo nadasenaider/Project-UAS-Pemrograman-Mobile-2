@@ -3,6 +3,8 @@
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.0-blue.svg?style=flat&logo=kotlin)](https://kotlinlang.org)
 [![Android](https://img.shields.io/badge/Android-SDK%2036-green.svg?style=flat&logo=android)](https://developer.android.com)
 [![Gemini AI](https://img.shields.io/badge/AI-Gemini%20Flash-orange.svg?style=flat&logo=google-cloud)](https://deepmind.google/technologies/gemini/)
+[![TMDB](https://img.shields.io/badge/Movie%20DB-TMDB%20API-01d277.svg?style=flat&logo=themoviedatabase)](https://www.themoviedb.org/)
+[![Google Auth](https://img.shields.io/badge/Auth-Google%20Login-ea4335.svg?style=flat&logo=google)](https://firebase.google.com/docs/auth)
 
 ---
 
